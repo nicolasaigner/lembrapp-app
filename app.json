@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Lembrapp",
+    "slug": "lembrapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#BB86FC"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lembrapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#BB86FC"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.lembrapp"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiUrl": "http://192.168.18.10:3000",
+      "eas": {
+        "projectId": "94503956-86f9-4b8a-a2b9-fed332451db4"
+      }
+    },
+    "owner": "nicolas.aigner"
+  }
+}
