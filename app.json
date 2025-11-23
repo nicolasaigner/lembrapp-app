@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "sdkVersion": "52.0.0",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -21,19 +21,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#BB86FC"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
       "package": "com.lembrapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "apiUrl": "http://192.168.18.10:3000",
-      "eas": {
-        "projectId": "94503956-86f9-4b8a-a2b9-fed332451db4"
-      }
-    },
-    "owner": "nicolas.aigner"
+    }
   }
 }
