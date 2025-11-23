@@ -1,46 +1,81 @@
-# 📱 Lembrapp - Frontend Mobile
+# 📱 Lembrapp - Gerenciador Inteligente de Estoque Doméstico
 
-Aplicativo React Native/Expo para gerenciamento inteligente de estoque doméstico.
+> Aplicativo React Native/Expo para gerenciamento de itens consumíveis (ração pet, medicamentos, produtos de casa) com alertas inteligentes de recompra.
 
 ## 🎯 Sobre o Projeto
 
-O Lembrapp é um aplicativo mobile desenvolvido para a disciplina AOP2 - Desenvolvimento Mobile que permite gerenciar itens de uso doméstico, pets, medicamentos e itens controlados, com alertas inteligentes de recompra.
+Projeto desenvolvido para a disciplina **CC5Ead - Programação para Dispositivos Móveis** (AOP2).
+
+**Aluno:** Nicolas Aigner  
+**Matrícula:** 202415633  
+**Curso:** Ciência da Computação - CC3Ead  
+**Professor:** Saulo Pereira Ribeiro
+
+---
 
 ## ✨ Funcionalidades
 
-### Requisitos Obrigatórios AOP2
+### ✅ Requisitos Obrigatórios AOP2
 - ✅ **Tela de Cadastro de Usuário** - Registro completo com validações
-- ✅ **Múltiplas Telas** - Dashboard, Lista de Itens, Detalhes, Configurações
-- ✅ **Drawer Navigator** - Navegação lateral com todas as seções
+- ✅ **Múltiplas Telas** - 5 telas implementadas (excede mínimo de 4)
+- ✅ **Drawer Navigator** - Navegação lateral customizada
 - ✅ **Context API** - Gerenciamento de estado global (AppContext e ThemeContext)
-- ✅ **FlatList** - Lista otimizada de itens com performance
+- ✅ **FlatList** - Lista otimizada de itens
 - ✅ **RNPicker** - Filtros de categoria e status
 
-### Funcionalidades Principais
-- 📊 **Dashboard Inteligente** - Visão geral dos itens por status
-- 📝 **Gestão de Itens** - CRUD completo de itens
-- 🔍 **Filtros Avançados** - Por categoria, status e busca textual
-- 🛒 **Registro de Compras** - Histórico de recompras
-- 🔔 **Alertas Automáticos** - Notificações de itens acabando ou em falta
-- 🌙 **Dark Mode Padrão** - Com opção de tema claro
-- 💾 **Persistência Local** - AsyncStorage para dados offline
+### 📱 Telas do Aplicativo
+1. **UserRegisterScreen** - Cadastro de usuário com validações
+2. **DashboardScreen** - Visão geral dos itens por status
+3. **ItemsListScreen** - Lista de itens com filtros avançados
+4. **ItemDetailScreen** - Criar/editar itens e registrar compras
+5. **SettingsScreen** - Configurações do usuário e tema
+
+### 🎨 Recursos Extras
+- 🌙 **Dark Mode** - Tema escuro padrão
+- ☀️ **Light Mode** - Opção de tema claro
+- 💾 **AsyncStorage** - Persistência de dados offline
+- 🔔 **Alertas** - Notificações de itens acabando ou em falta
+- 📊 **Cálculos Automáticos** - Estoque, dias restantes, status
+
+---
 
 ## 🛠️ Stack Tecnológica
 
-- **Framework**: React Native
-- **Build Tool**: Expo SDK 54
-- **Linguagem**: TypeScript
-- **Navegação**: React Navigation (Stack + Drawer)
-- **Estado Global**: Context API
-- **Requisições HTTP**: Axios
-- **Persistência**: AsyncStorage
-- **UI Components**: React Native Paper, Picker
-- **Ícones**: Expo Vector Icons
+- **Framework:** React Native / Expo SDK 54
+- **Linguagem:** TypeScript
+- **Navegação:** React Navigation (Stack + Drawer)
+- **Estado Global:** Context API
+- **Requisições HTTP:** Axios
+- **Persistência:** AsyncStorage
+- **UI Components:** React Native Paper, Picker
+- **Ícones:** Expo Vector Icons
 
-## 📁 Estrutura do Projeto
+---
+
+## 🚀 Como Executar
+
+### No Snack Expo (Online)
+1. Acesse: [Link do Snack](https://snack.expo.dev/@seu-usuario/lembrapp)
+2. Abra o app **Expo Go** no seu celular
+3. Escaneie o QR Code
+4. Pronto! O app está rodando
+
+### Localmente
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar o Expo
+npm start
+```
+
+---
+
+## 📚 Estrutura do Projeto
 
 ```
-apps/app/
+lembrapp-snack/
 ├── App.tsx                    # Entry point
 ├── app.json                   # Configurações do Expo
 ├── package.json
@@ -48,14 +83,13 @@ apps/app/
 │   ├── components/           # Componentes reutilizáveis
 │   │   ├── ItemCard/        # Card de item com status
 │   │   ├── FilterBar/       # Barra de filtros com RNPicker
-│   │   └── FormInput/       # Input estilizado com tema
+│   │   └── FormInput/       # Input estilizado
 │   ├── contexts/            # Context API
 │   │   ├── AppContext.tsx   # Estado global (user, items)
-│   │   └── ThemeContext.tsx # Gerenciamento de tema
+│   │   └── ThemeContext.tsx # Tema dark/light
 │   ├── navigation/          # Navegação
 │   │   ├── RootStackNavigator.tsx
-│   │   ├── DrawerNavigator.tsx
-│   │   └── types.ts
+│   │   └── DrawerNavigator.tsx
 │   ├── screens/             # Telas do app
 │   │   ├── UserRegisterScreen/
 │   │   ├── DashboardScreen/
@@ -65,266 +99,74 @@ apps/app/
 │   ├── services/            # API
 │   │   └── api.ts
 │   ├── theme/               # Tema dark/light
-│   │   ├── colors.ts
-│   │   ├── darkTheme.ts
-│   │   └── lightTheme.ts
 │   ├── types/               # TypeScript types
-│   │   └── index.ts
 │   └── utils/               # Utilitários
-│       └── itemStatus.ts
 └── assets/                  # Imagens e ícones
 ```
 
-## 🚀 Como Executar
+---
 
-### Pré-requisitos
+## 🎨 Tema e Cores
 
-- Node.js 18+
-- npm ou yarn
-- Expo CLI (`npm install -g expo-cli`)
-- Expo Go app (iOS/Android) ou emulador
+### Dark Mode (Padrão)
+- **Background:** #121212
+- **Surface:** #1E1E1E
+- **Primary:** #BB86FC
+- **Text:** #FFFFFF
 
-### Instalação
-
-```bash
-# Navegar para a pasta do app
-cd apps/app
-
-# Instalar dependências
-npm install
-
-# Iniciar o servidor de desenvolvimento
-npm start
-```
-
-### Executar em Dispositivo
-
-**Opção 1: Expo Go (mais fácil)**
-```bash
-npm start
-# Escanear QR code com Expo Go app
-```
-
-**Opção 2: Emulador Android**
-```bash
-npm run android
-```
-
-**Opção 3: Simulador iOS (macOS)**
-```bash
-npm run ios
-```
-
-## 🎨 Temas
-
-### Dark Theme (Padrão)
-- Background: `#121212`
-- Surface: `#1E1E1E`
-- Primary: `#BB86FC`
-- Secondary: `#03DAC6`
-
-### Light Theme
-- Background: `#FFFFFF`
-- Surface: `#F5F5F5`
-- Primary: `#6200EE`
-- Secondary: `#03DAC6`
-
-## 📱 Telas
-
-### 1. UserRegisterScreen
-Primeira tela obrigatória para novos usuários.
-
-**Campos:**
-- Nome completo (obrigatório)
-- E-mail (obrigatório, validado)
-- Telefone (opcional)
-- Horário de notificação (obrigatório)
-- Preferência de tema (dark/light)
-
-### 2. DashboardScreen
-Visão geral dos itens por status.
-
-**Seções:**
-- ⚠️ Em Falta - Itens que acabaram
-- ⏰ Acabando - Itens próximos do fim
-- ✅ Em Dia - Itens com estoque adequado
-
-**Ações rápidas:**
-- Registrar compra diretamente
-- Ver detalhes do item
-
-### 3. ItemsListScreen
-Lista completa com filtros avançados.
-
-**Recursos:**
-- FlatList otimizada
-- RNPicker para categoria
-- RNPicker para status
-- Busca textual por nome
-- Pull-to-refresh
-
-### 4. ItemDetailScreen
-Criação e edição de itens.
-
-**Campos:**
-- Nome
-- Categoria (Pet, Medicamento Controlado, Medicamento, Casa)
-- Unidade (sachê, comprimido, kg, ml, etc)
-- Quantidade total do lote
-- Consumo diário
-- Data de início
-- Lead time (dias para recompra)
-- Requer receita controlada (checkbox)
-- Dias de antecedência da receita (se controlado)
-
-### 5. SettingsScreen
-Configurações do usuário.
-
-**Opções:**
-- Telefone
-- Horário de notificação
-- Tema (dark/light com aplicação imediata)
-
-## 🔌 Integração com Backend
-
-O app consome a API REST do backend Lembrapp.
-
-**Configuração:**
-Edite `src/services/api.ts`:
-```typescript
-const API_BASE_URL = 'http://SEU_IP:3000';
-```
-
-**Nota**: Para testar em dispositivo físico, use o IP da sua máquina, não `localhost`.
-
-### Endpoints Utilizados
-
-**Users:**
-- `POST /users` - Criar usuário
-- `GET /users/:id` - Buscar usuário
-- `PATCH /users/:id` - Atualizar usuário
-
-**Items:**
-- `GET /items` - Listar itens (com filtros)
-- `GET /items/:id` - Buscar item
-- `POST /items` - Criar item
-- `PATCH /items/:id` - Atualizar item
-- `DELETE /items/:id` - Deletar item
-
-**Purchases:**
-- `POST /items/:itemId/purchases` - Registrar compra
-- `GET /items/:itemId/purchases` - Listar compras
-
-## 📊 Context API
-
-### AppContext
-Gerencia estado global da aplicação.
-
-**Estado:**
-- `user: User | null` - Usuário logado
-- `items: Item[]` - Lista de itens
-- `isLoading: boolean` - Estado de carregamento
-
-**Funções:**
-- `setUser(user)` - Atualizar usuário
-- `setItems(items)` - Atualizar lista de itens
-- `reloadItems()` - Recarregar itens do backend
-
-### ThemeContext
-Gerencia tema dark/light.
-
-**Estado:**
-- `mode: 'dark' | 'light'` - Modo atual
-- `theme: Theme` - Objeto de tema com cores
-
-**Funções:**
-- `setMode(mode)` - Alterar tema (persiste em AsyncStorage)
-
-## 🧪 Testando o App
-
-### Fluxo de Teste Completo
-
-1. **Cadastro de Usuário**
-   - Preencher formulário
-   - Escolher tema
-   - Validar campos obrigatórios
-
-2. **Dashboard**
-   - Ver itens separados por status
-   - Testar pull-to-refresh
-   - Registrar compra rápida
-
-3. **Lista de Itens**
-   - Filtrar por categoria
-   - Filtrar por status
-   - Buscar por nome
-   - Combinar filtros
-
-4. **Criar Novo Item**
-   - Navegar via Drawer "Novo Item"
-   - Preencher todos os campos
-   - Testar validações
-   - Marcar "Requer receita" e ver campo adicional
-
-5. **Configurações**
-   - Alterar tema (ver mudança imediata)
-   - Atualizar horário de notificação
-   - Salvar alterações
-
-## 🐛 Troubleshooting
-
-### Erro: "Network request failed"
-- Verifique se o backend está rodando
-- Use o IP correto (não `localhost` em dispositivo físico)
-- Exemplo: `http://192.168.1.100:3000`
-
-### Erro: "Cannot find module"
-```bash
-# Limpar cache e reinstalar
-rm -rf node_modules
-npm install
-npm start --clear
-```
-
-### Tema não muda
-- Verifique AsyncStorage
-- Limpar dados do app
-- Recarregar app
-
-### Drawer não abre
-- Verificar react-native-gesture-handler
-- Importar no topo do App.tsx: `import 'react-native-gesture-handler'`
-
-## 📝 Requisitos da AOP2 Atendidos
-
-| Requisito | Status | Implementação |
-|-----------|--------|---------------|
-| Tela de Cadastro | ✅ | UserRegisterScreen com validações |
-| Múltiplas Telas | ✅ | 5 telas principais |
-| Drawer Navigator | ✅ | DrawerNavigator com 4 rotas |
-| Context API | ✅ | AppContext + ThemeContext |
-| FlatList | ✅ | ItemsListScreen |
-| RNPicker | ✅ | FilterBar (categoria + status) |
-
-## 🔮 Melhorias Futuras
-
-- [ ] Notificações push reais
-- [ ] Modo offline completo
-- [ ] Gráficos de consumo
-- [ ] Compartilhamento de listas
-- [ ] Scanner de código de barras
-- [ ] Exportar relatórios
-- [ ] Integração com assistentes de voz
-
-## 👥 Autor
-
-Desenvolvido para AOP2 - Desenvolvimento Mobile
-
-## 📄 Licença
-
-Este projeto é acadêmico e destinado apenas para fins educacionais.
+### Light Mode
+- **Background:** #FFFFFF
+- **Surface:** #F5F5F5
+- **Primary:** #6200EE
+- **Text:** #000000
 
 ---
 
-**Lembrapp** - Nunca mais esqueça de comprar algo importante! 🎯
+## 📊 Integração com Backend
+
+O app se conecta a uma API RESTful desenvolvida em NestJS:
+
+- **Users:** Cadastro e atualização de usuários
+- **Items:** CRUD completo de itens
+- **Purchases:** Registro de compras e histórico
+
+**API URL:** Configurável em `src/services/api.ts`
+
+---
+
+## ✅ Requisitos AOP2 Atendidos
+
+| Requisito | Status | Implementação |
+|-----------|--------|---------------|
+| Tela de cadastro | ✅ | UserRegisterScreen com validações |
+| Múltiplas telas (4+) | ✅ | 5 telas implementadas |
+| Drawer Navigator | ✅ | Customizado com tema |
+| Context API | ✅ | AppContext + ThemeContext |
+| FlatList | ✅ | ItemsListScreen com pull-to-refresh |
+| RNPicker | ✅ | FilterBar com 2 pickers |
+| Comunicação direta | ✅ | Props entre componentes |
+| Comunicação indireta | ✅ | Context + callbacks |
+| Paleta de cores | ✅ | Dark/Light mode |
+| API RESTful | ✅ | GET/POST para backend |
+| Validações | ✅ | Formulários completos |
+
+---
+
+## 📝 Licença
+
+Este projeto foi desenvolvido para fins acadêmicos na disciplina CC5Ead - Programação para Dispositivos Móveis.
+
+---
+
+## 👤 Autor
+
+**Nicolas Aigner**
+- Matrícula: 202415633
+- Curso: Ciência da Computação - CC3Ead
+- Disciplina: CC5Ead - Programação para Dispositivos Móveis
+- Professor: Saulo Pereira Ribeiro
+
+---
+
+**Data:** Novembro 2024
 
