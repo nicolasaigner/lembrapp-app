@@ -1,41 +1,29 @@
-# 📱 Lembrapp - Gerenciador Inteligente de Estoque Doméstico
+# 📱 Lembrapp - Frontend Mobile
 
-> Aplicativo React Native/Expo para gerenciamento de itens consumíveis (ração pet, medicamentos, produtos de casa) com alertas inteligentes de recompra.
+> Aplicativo React Native/Expo para gerenciamento inteligente de estoque doméstico
 
-## 🎯 Sobre o Projeto
+## 🎯 Sobre
 
-Projeto desenvolvido para a disciplina **CC5Ead - Programação para Dispositivos Móveis** (AOP2).
+App mobile desenvolvido com React Native/Expo para gerenciar itens consumíveis (ração pet, medicamentos, produtos de casa) com alertas inteligentes de recompra.
 
-**Aluno:** Nicolas Aigner  
-**Matrícula:** 202415633  
-**Curso:** Ciência da Computação - CC3Ead  
-**Professor:** Saulo Pereira Ribeiro
+**Projeto AOP2 - CC5Ead Programação para Dispositivos Móveis**
 
 ---
 
-## ✨ Funcionalidades
+## ✅ Requisitos AOP2 Implementados
 
-### ✅ Requisitos Obrigatórios AOP2
-- ✅ **Tela de Cadastro de Usuário** - Registro completo com validações
-- ✅ **Múltiplas Telas** - 5 telas implementadas (excede mínimo de 4)
-- ✅ **Drawer Navigator** - Navegação lateral customizada
-- ✅ **Context API** - Gerenciamento de estado global (AppContext e ThemeContext)
-- ✅ **FlatList** - Lista otimizada de itens
-- ✅ **RNPicker** - Filtros de categoria e status
-
-### 📱 Telas do Aplicativo
-1. **UserRegisterScreen** - Cadastro de usuário com validações
-2. **DashboardScreen** - Visão geral dos itens por status
-3. **ItemsListScreen** - Lista de itens com filtros avançados
-4. **ItemDetailScreen** - Criar/editar itens e registrar compras
-5. **SettingsScreen** - Configurações do usuário e tema
-
-### 🎨 Recursos Extras
-- 🌙 **Dark Mode** - Tema escuro padrão
-- ☀️ **Light Mode** - Opção de tema claro
-- 💾 **AsyncStorage** - Persistência de dados offline
-- 🔔 **Alertas** - Notificações de itens acabando ou em falta
-- 📊 **Cálculos Automáticos** - Estoque, dias restantes, status
+| Requisito | Status | Implementação |
+|-----------|--------|---------------|
+| Tela de cadastro | ✅ | UserRegisterScreen com validações |
+| Múltiplas telas (4+) | ✅ | 5 telas implementadas |
+| Drawer Navigator | ✅ | Customizado com tema dark/light |
+| Context API | ✅ | AppContext + ThemeContext |
+| FlatList | ✅ | ItemsListScreen com pull-to-refresh |
+| RNPicker | ✅ | FilterBar (2 pickers: categoria + status) |
+| Comunicação direta | ✅ | Props entre componentes |
+| Comunicação indireta | ✅ | Context + callbacks |
+| Paleta de cores | ✅ | Dark mode (padrão) + Light mode |
+| API RESTful | ✅ | GET/POST integrado com backend |
 
 ---
 
@@ -44,117 +32,99 @@ Projeto desenvolvido para a disciplina **CC5Ead - Programação para Dispositivo
 - **Framework:** React Native / Expo SDK 54
 - **Linguagem:** TypeScript
 - **Navegação:** React Navigation (Stack + Drawer)
-- **Estado Global:** Context API
-- **Requisições HTTP:** Axios
+- **Estado:** Context API
+- **HTTP:** Axios
 - **Persistência:** AsyncStorage
-- **UI Components:** React Native Paper, Picker
-- **Ícones:** Expo Vector Icons
+- **UI:** React Native Paper, Picker
+
+---
+
+## 📱 Telas
+
+1. **UserRegisterScreen** - Cadastro com validações
+2. **DashboardScreen** - Visão geral por status
+3. **ItemsListScreen** - Lista com FlatList + filtros RNPicker
+4. **ItemDetailScreen** - CRUD de itens + histórico
+5. **SettingsScreen** - Configurações e tema
 
 ---
 
 ## 🚀 Como Executar
 
-### No Snack Expo (Online)
-1. Acesse: [Link do Snack](https://snack.expo.dev/@seu-usuario/lembrapp)
-2. Abra o app **Expo Go** no seu celular
-3. Escaneie o QR Code
-4. Pronto! O app está rodando
+### No Snack Expo
+1. Acesse: https://snack.expo.dev/
+2. Import: `https://github.com/nicolasaigner/lembrapp-app`
+3. Escaneie QR Code com Expo Go
 
 ### Localmente
-
 ```bash
-# Instalar dependências
 npm install
-
-# Iniciar o Expo
 npm start
 ```
 
 ---
 
-## 📚 Estrutura do Projeto
-
-```
-lembrapp-snack/
-├── App.tsx                    # Entry point
-├── app.json                   # Configurações do Expo
-├── package.json
-├── src/
-│   ├── components/           # Componentes reutilizáveis
-│   │   ├── ItemCard/        # Card de item com status
-│   │   ├── FilterBar/       # Barra de filtros com RNPicker
-│   │   └── FormInput/       # Input estilizado
-│   ├── contexts/            # Context API
-│   │   ├── AppContext.tsx   # Estado global (user, items)
-│   │   └── ThemeContext.tsx # Tema dark/light
-│   ├── navigation/          # Navegação
-│   │   ├── RootStackNavigator.tsx
-│   │   └── DrawerNavigator.tsx
-│   ├── screens/             # Telas do app
-│   │   ├── UserRegisterScreen/
-│   │   ├── DashboardScreen/
-│   │   ├── ItemsListScreen/
-│   │   ├── ItemDetailScreen/
-│   │   └── SettingsScreen/
-│   ├── services/            # API
-│   │   └── api.ts
-│   ├── theme/               # Tema dark/light
-│   ├── types/               # TypeScript types
-│   └── utils/               # Utilitários
-└── assets/                  # Imagens e ícones
-```
-
----
-
-## 🎨 Tema e Cores
+## 🎨 Tema
 
 ### Dark Mode (Padrão)
-- **Background:** #121212
-- **Surface:** #1E1E1E
-- **Primary:** #BB86FC
-- **Text:** #FFFFFF
+- Background: #121212
+- Surface: #1E1E1E
+- Primary: #BB86FC
 
 ### Light Mode
-- **Background:** #FFFFFF
-- **Surface:** #F5F5F5
-- **Primary:** #6200EE
-- **Text:** #000000
+- Background: #FFFFFF
+- Surface: #F5F5F5
+- Primary: #6200EE
 
 ---
 
-## 📊 Integração com Backend
+## 📦 Estrutura
 
-O app se conecta a uma API RESTful desenvolvida em NestJS:
-
-- **Users:** Cadastro e atualização de usuários
-- **Items:** CRUD completo de itens
-- **Purchases:** Registro de compras e histórico
-
-**API URL:** Configurável em `src/services/api.ts`
-
----
-
-## ✅ Requisitos AOP2 Atendidos
-
-| Requisito | Status | Implementação |
-|-----------|--------|---------------|
-| Tela de cadastro | ✅ | UserRegisterScreen com validações |
-| Múltiplas telas (4+) | ✅ | 5 telas implementadas |
-| Drawer Navigator | ✅ | Customizado com tema |
-| Context API | ✅ | AppContext + ThemeContext |
-| FlatList | ✅ | ItemsListScreen com pull-to-refresh |
-| RNPicker | ✅ | FilterBar com 2 pickers |
-| Comunicação direta | ✅ | Props entre componentes |
-| Comunicação indireta | ✅ | Context + callbacks |
-| Paleta de cores | ✅ | Dark/Light mode |
-| API RESTful | ✅ | GET/POST para backend |
-| Validações | ✅ | Formulários completos |
+```
+src/
+├── components/      # Componentes reutilizáveis
+│   ├── ItemCard/   # Card de item
+│   ├── FilterBar/  # Filtros RNPicker
+│   └── FormInput/  # Input customizado
+├── contexts/       # Context API
+│   ├── AppContext.tsx
+│   └── ThemeContext.tsx
+├── navigation/     # Navegação
+│   ├── DrawerNavigator.tsx
+│   └── RootStackNavigator.tsx
+├── screens/        # Telas
+│   ├── UserRegisterScreen/
+│   ├── DashboardScreen/
+│   ├── ItemsListScreen/
+│   ├── ItemDetailScreen/
+│   └── SettingsScreen/
+├── services/       # API integration
+├── theme/          # Cores e temas
+├── types/          # TypeScript types
+└── utils/          # Helpers
+```
 
 ---
 
-## 📝 Licença
+## 🔗 Backend API
 
-Este projeto foi desenvolvido para fins acadêmicos na disciplina CC5Ead - Programação para Dispositivos Móveis.
+Integra com API NestJS:
+- **Repositório:** https://github.com/nicolasaigner/lembrapp-api
+- **URL padrão:** http://localhost:3000
+- **Configurável em:** `src/services/api.ts`
+
+---
+
+## 🔗 Repositórios Relacionados
+
+- **Backend API:** https://github.com/nicolasaigner/lembrapp-api
+- **Repositório Principal:** https://github.com/nicolasaigner/aop2-desenvolvimento-mobile
+
+---
+
+## 📹 Demonstração
+
+**Snack:** https://snack.expo.dev/@nicolasaigner/lembrapp
 
 ---
 
@@ -168,5 +138,7 @@ Este projeto foi desenvolvido para fins acadêmicos na disciplina CC5Ead - Progr
 
 ---
 
-**Data:** Novembro 2024
+## 📝 Licença
+
+Projeto acadêmico - CC5Ead (2024)
 
