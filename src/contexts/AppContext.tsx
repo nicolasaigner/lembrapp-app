@@ -3,6 +3,7 @@ import React, {
   useContext,
   useState,
   useEffect,
+  useCallback,
   ReactNode,
 } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -44,7 +45,7 @@ export function AppProvider({ children }: AppProviderProps) {
     if (user && token) {
       reloadItems();
     }
-  }, [user, token]);
+  }, [user, token, reloadItems]);
 
   const loadUserAndToken = async () => {
     try {
@@ -107,7 +108,7 @@ export function AppProvider({ children }: AppProviderProps) {
     }
   };
 
-  const reloadItems = async () => {
+  const reloadItems = useCallback(async () => {
     if (!user) return;
 
     try {
@@ -116,7 +117,7 @@ export function AppProvider({ children }: AppProviderProps) {
     } catch (error) {
       console.error("Error loading items:", error);
     }
-  };
+  }, [user]);
 
   return (
     <AppContext.Provider

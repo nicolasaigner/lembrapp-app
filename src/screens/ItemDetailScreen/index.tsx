@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -51,13 +51,7 @@ export default function ItemDetailScreen() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  useEffect(() => {
-    if (isEditMode) {
-      loadItem();
-    }
-  }, [itemId]);
-
-  const loadItem = async () => {
+  const loadItem = useCallback(async () => {
     if (!itemId) return;
 
     try {
@@ -75,7 +69,13 @@ export default function ItemDetailScreen() {
       console.error("Error loading item:", error);
       Alert.alert("Erro", "Não foi possível carregar o item");
     }
-  };
+  }, [itemId]);
+
+  useEffect(() => {
+    if (isEditMode) {
+      loadItem();
+    }
+  }, [isEditMode, loadItem]);
 
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
