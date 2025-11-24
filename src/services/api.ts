@@ -13,7 +13,7 @@ import {
 } from "../types";
 
 // Configure baseURL - change this to your API URL
-const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.18.10:3000";
+const API_BASE_URL = "https://lembrapp-api.vercel.app";
 
 const api = axios.create({
   baseURL: `${API_BASE_URL}/api/v1`,

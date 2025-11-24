@@ -20,7 +20,7 @@ export default function LoginScreen() {
   const { setUser, setToken } = useApp();
   const { theme } = useTheme();
 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('joao@exemplo.com');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -149,7 +149,10 @@ export default function LoginScreen() {
         </View>
 
         <Text style={[styles.footer, { color: theme.colors.textSecondary }]}>
-          Login simplificado sem senha para facilitar os testes.
+          Login simplificado sem senha para facilitar os testes no Snack.
+            O e-mail inserido: "joao@exemplo.com" basta clicar em "Entrar".
+            Caso queira testar o cadastro, basta clicar em "Criar Nova Conta".
+
         </Text>
       </View>
     </KeyboardAvoidingView>
