@@ -131,7 +131,6 @@ Integra com API NestJS:
 ## 👤 Autor
 
 **Nicolas Aigner**
-- Matrícula: 202415633
 - Curso: Ciência da Computação - CC3Ead
 - Disciplina: CC5Ead - Programação para Dispositivos Móveis
 - Professor: Saulo Pereira Ribeiro
