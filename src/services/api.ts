@@ -13,10 +13,10 @@ import {
 } from "../types";
 
 // Configure baseURL - change this to your API URL
-const API_BASE_URL = "http://192.168.18.10:3000/api/v1";
+const API_BASE_URL = API_URL || "http://192.168.18.10:3000";
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: `${API_BASE_URL}/api/v1`,
   headers: {
     "Content-Type": "application/json",
   },
