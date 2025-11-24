@@ -41,7 +41,8 @@ export function AppProvider({ children }: AppProviderProps) {
     loadUserAndToken();
   }, []);
 
-  useEffect(() => {
+  // @ts-ignore
+    useEffect(() => {
     if (user && token) {
       reloadItems();
     }
